@@ -1,0 +1,13 @@
+#Copyright 2023 Jeff Chu
+
+t9: tnine.o trie.o
+	gcc -Wall -std=c11 -o t9 trie.o tnine.o 
+
+tnine.o: tnine.c trienode.h
+	gcc -Wall -std=c11 -c -o tnine.o tnine.c 
+
+trie.o: trie.c trienode.h
+	gcc -Wall -std=c11 -c -o trie.o trie.c 
+
+clean:
+	rm -f *.o t9 *~
